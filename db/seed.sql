@@ -3,17 +3,21 @@ CREATE DATABASE jobs;
 
 \c jobs
 
-CREATE TABLE users(
-    id serial primary key,
-    username varchar unique not null,
-    email varchar unique not null,
-    phone varchar(10) not null
+CREATE TABLE users
+(
+  id serial primary key,
+  username varchar unique not null,
+  email varchar unique not null,
+  phone varchar(10) not null
 );
 
-CREATE TABLE saved_job( 
+CREATE TABLE saved_job
+(
   id serial primary key,
   title varchar,
   discreption varchar,
   job_url varchar,
-  FOREING KEY (user_id) REFERENCES users
+  job_location varchar,
+  company_logo varchar,
+  FOREIGN KEY (user_id) REFERENCES users ON DELETE CASCADE
 );
