@@ -2,10 +2,9 @@ var db = require('../db/config');
 
 var job = {};
 
-// find joobs 
 
-jobs.getAll = (req, res, next) => {
-    connection.manyOrNone("SELECT * FROM saved_jobs;") 
+jobs.find = (req, res, next) => {
+    connection.manyOrNone("SELECT * FROM saved_jobs WHERE user_id=$1 RETURNING *;" , [req.body.id]) 
       .then(result => {
           res.locals.jobs = result;
           next();
@@ -17,8 +16,8 @@ jobs.getAll = (req, res, next) => {
   }
   
   jobs.create = function(req, res, next){
-    connection.one("INSERT INTO jobs() VALUES($) RETURNING *;",
-    [req.body.name, req.body.rgb, req.body.hex])
+    connection.one("INSERT INTO saved_job (title, description, job_url, job_location, company_logo, user_id) VALUES($1, $2, $3, $4, $5, $6) RETURNING *;",
+    [req.body.title, req.body.description, req.body.job_url, req.body.job_location, req.body.company_logo, req.body.user_id])
       .then(result => {
         res.locals.job = result;
         next()
@@ -30,7 +29,7 @@ jobs.getAll = (req, res, next) => {
   }
   
   jobs.delete = function(req, res, next){
-    connection.none('DELETE FROM jobs WHERE id=$1;', [req.params.id])
+    connection.none('DELETE FROM jobs WHERE user_id=$1;', [req.body.id])
       .then(()=>{
         console.log('successful delete');
         next();

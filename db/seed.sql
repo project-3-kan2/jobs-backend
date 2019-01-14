@@ -15,7 +15,7 @@ CREATE TABLE saved_job
 (
   id serial primary key,
   title varchar,
-  discreption varchar,
+  description varchar,
   job_url varchar,
   job_location varchar,
   company_logo varchar,
