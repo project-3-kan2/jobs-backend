@@ -1,6 +1,8 @@
-var connection = require('../db/config');
+var db = require('../db/config');
 
-var jobs = {};
+var job = {};
+
+// find joobs 
 
 jobs.getAll = (req, res, next) => {
     connection.manyOrNone("SELECT * FROM saved_jobs;") 
@@ -39,4 +41,4 @@ jobs.getAll = (req, res, next) => {
       })
   }
 
-module.exports = jobs;
+module.exports = job;

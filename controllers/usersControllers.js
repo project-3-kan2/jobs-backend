@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const jobs = require('../models/job');
+const users = require('../models/user');
 
-//routes and functions
+
+
+
+
+
+//create + edit 
+
 
 module.exports = router;
