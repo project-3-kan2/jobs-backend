@@ -7,8 +7,8 @@ CREATE TABLE users
 (
   id serial primary key,
   username varchar unique not null,
-  firstname varchar unique not null,
-  lastname varchar unique not null,
+  firstname varchar not null,
+  lastname varchar not null,
   email varchar unique not null,
   phone varchar(10) not null
 );
