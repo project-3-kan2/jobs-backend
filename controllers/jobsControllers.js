@@ -4,12 +4,11 @@ const router = express.Router();
 const job = require('../models/job');
 
 const sendNewJob = (req,res) => res.json(res.locals.job);
-const sendFoundJob = (req, res) => res.json(res.locals.job);
+const sendFoundJob = (req, res) => res.json(res.locals.jobs);
 const sendSuccess = (req, res) => res.json({ message: 'success' });
 
 router.post('/', job.create, sendNewJob);
-router.get('/:id', job.find, sendFoundJob);
+router.get('/:id', job.getAll, sendFoundJob);
 router.delete('/:id', job.delete, sendSuccess);
-
 
 module.exports = router;

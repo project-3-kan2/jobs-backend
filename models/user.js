@@ -3,8 +3,8 @@ var db = require('../db/config');
 var user = {}; 
 
 user.create = function (req, res, next) {
-  db.one("INSERT INTO users (username, email, phone) VALUES($1, $2, $3) RETURNING *;",
-    [req.body.name, req.body.email, req.body.phone])
+  db.one("INSERT INTO users (username, firstname, lastname, email, phone) VALUES($1, $2, $3, $4, $5) RETURNING *;",
+    [req.body.name, req.body.firstname, req.body.lastname, req.body.email, req.body.phone])
     .then(result => {
       res.locals.user = result;
       next()
@@ -29,8 +29,8 @@ user.find = function (req, res, next) {
 }
 
 user.update = function (req, res, next) {
-  db.one("UPDATE users SET username=$1, email=$2, phone=$3, WHERE id=$4 RETURNING *;",
-    [req.body.name, req.body.email, req.body.phone, req.body.id])
+  db.one("UPDATE users SET username=$1, firstname=$2, lastname=$3 email=$4, phone=$5, WHERE id=$6 RETURNING *;",
+    [req.body.username, req.body.firstname, req.body.lastname, req.body.email, req.body.phone, req.params.id])
     .then(result => {
       res.locals.user = result;
       next()
@@ -40,7 +40,5 @@ user.update = function (req, res, next) {
       next();
     })
 }
-
-
 
 module.exports = user;
