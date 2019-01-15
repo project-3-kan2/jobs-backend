@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
   res.send('Jobs, Jobs, Jobs');
 })
 
-const userController = require('./controllers/usersControllers');
-app.use('/user', userController);
+const usersController = require('./controllers/usersControllers');
+app.use('/user', usersController);
 
 const jobsController = require('./controllers/jobsControllers');
 app.use('/job', jobsController);

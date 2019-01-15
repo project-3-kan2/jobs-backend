@@ -20,6 +20,7 @@ CREATE TABLE saved_job
   job_location varchar,
   company_logo varchar,
   company_name varchar,
+  user_id int not null,
   FOREIGN KEY (user_id) REFERENCES users ON DELETE CASCADE
 );
 
