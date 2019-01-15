@@ -21,7 +21,7 @@ const userController = require('./controllers/usersControllers');
 app.use('/user', userController);
 
 const jobsController = require('./controllers/jobsControllers');
-app.use('/jobs', jobsController);
+app.use('/job', jobsController);
 
 app.listen(port, () => {
   console.log('listening on localhost:' + port);
