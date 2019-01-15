@@ -3,7 +3,7 @@ var db = require('../db/config');
 var job = {};
 
 job.getAll = function (req, res, next) {
-    db.manyOrNone("SELECT * FROM saved_jobs WHERE user_id=$1;" , [req.params.id]) 
+    db.manyOrNone("SELECT * FROM saved_job WHERE user_id=$1;" , [req.params.id]) 
       .then(result => {
           res.locals.jobs = result;
           next();
