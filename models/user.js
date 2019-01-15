@@ -16,8 +16,8 @@ user.create = function (req, res, next) {
 }
 
 user.find = function (req, res, next) {
-  db.one("SELECT * FROM users WHERE id=$1;",
-    [req.params.id])
+  db.one("SELECT * FROM users WHERE username=$1;",
+    [req.params.username])
     .then(result => {
       res.locals.user = result;
       next()
