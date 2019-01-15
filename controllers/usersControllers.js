@@ -9,6 +9,6 @@ const sendUpdatedUser = (req, res) => res.json(res.locals.user);
 
 router.post('/', user.create, sendNewUser);
 router.put('/:id', user.update, sendUpdatedUser);
-router.get('/:id', user.find, sendUser);
+router.get('/:username', user.find, sendUser);
 
 module.exports = router;
