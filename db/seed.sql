@@ -10,7 +10,7 @@ CREATE TABLE users
   firstname varchar not null,
   lastname varchar not null,
   email varchar unique not null,
-  phone varchar(10) not null
+  phone varchar(15) not null
 );
 
 CREATE TABLE saved_job
