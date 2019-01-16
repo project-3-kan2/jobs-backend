@@ -3,8 +3,10 @@ const port = 3000;
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const jwt = require("jsonwebtoken");
 
 const app = express();
+require("dotenv").config();
 
 app.use(logger('dev'));
 
