@@ -32,8 +32,8 @@ INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('nawaf',
 INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('khaled','khaled', 'tah', 'k@k.com', '0550321321' );
 
 
-INSERT INTO saved_job ( id,title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES (1 ,'it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
-INSERT INTO saved_job (id,title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES (2 ,'ce','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',2 );
-INSERT INTO saved_job (id,title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES (3 ,'cs' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',3);
-INSERT INTO saved_job (id,title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES (4 , 'ec','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',4);
-INSERT INTO saved_job ( id,title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES (5 ,'it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
+INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
+INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('ce','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',2 );
+INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('cs' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',3);
+INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('ec','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',4);
+INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
