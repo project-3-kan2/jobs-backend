@@ -4,7 +4,7 @@ var user = {};
 
 user.create = function (req, res, next) {
   db.one("INSERT INTO users (username, firstname, lastname, email, phone) VALUES($1, $2, $3, $4, $5) RETURNING *;",
-    [req.body.name, req.body.firstname, req.body.lastname, req.body.email, req.body.phone])
+    [req.body.username.toLowerCase(), req.body.firstname, req.body.lastname, req.body.email.toLowerCase(), req.body.phone])
     .then(result => {
       res.locals.user = result;
       next()
