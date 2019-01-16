@@ -54,8 +54,8 @@ user.login = (req, res, next) => {
     });
 };
 
-user.update = (req, res, next) => {
-  db.one("UPDATE users SET username=$1, firstname=$2, lastname=$3 email=$4, phone=$5, WHERE id=$6 RETURNING *;",
+user.update = function (req, res, next) {
+  db.one("UPDATE users SET username=$1, firstname=$2, lastname=$3, email=$4, phone=$5 WHERE id=$6 RETURNING *;",
     [req.body.username, req.body.firstname, req.body.lastname, req.body.email, req.body.phone, req.params.id])
     .then(result => {
       res.locals.user = result;
