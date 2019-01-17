@@ -28,7 +28,7 @@ job.getAll = function (req, res, next) {
   }
   
   job.delete = function (req, res, next) {
-    db.none('DELETE FROM jobs WHERE user_id=$1;', [req.params.id])
+    db.none('DELETE FROM saved_job WHERE id=$1;', [req.params.id])
       .then(()=>{
         console.log('successful delete');
         next();
