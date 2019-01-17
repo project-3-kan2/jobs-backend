@@ -11,7 +11,7 @@ CREATE TABLE users
   lastname varchar not null,
   email varchar unique not null,
   password_digest varchar NOT NULL,
-  phone varchar(15) not null
+  phone varchar(10) not null
 );
 
 CREATE TABLE saved_job
