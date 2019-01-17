@@ -10,7 +10,6 @@ CREATE TABLE users
   firstname varchar not null,
   lastname varchar not null,
   email varchar unique not null,
-  password_digest varchar NOT NULL,
   phone varchar(10) not null
 );
 
