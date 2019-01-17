@@ -1,3 +1,4 @@
+// configure postgres to connect our db to our express app
 const pgPromise = require('pg-promise');
 const pgInstance = pgPromise();
 
@@ -5,7 +6,7 @@ const config = {
   host: 'localhost',
   port: 5432,
   database: 'jobs',
-  user: process.env.DB_HOST
+  user: 'nadaabdulkarem' // your username here!!
 }
 
 const connection = pgInstance(config);
