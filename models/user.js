@@ -28,8 +28,8 @@ user.find = (req, res, next) => {
       next();
     })
 }
-user.checkUsername = (req, res, next) => {
-  db.oneOrNone("SELECT * FROM users WHERE username=$1;", [req.body.username])
+user.findEmail = (req, res, next) => {
+  db.oneOrNone("SELECT * FROM users WHERE email=$1;", [req.body.email])
     .then(function(result) {
       res.user = result;
       next();
@@ -41,7 +41,7 @@ user.checkUsername = (req, res, next) => {
 };
 
 user.login = (req, res, next) => {
-  db.one("SELECT * FROM users WHERE username = $1;", [req.body.username])
+  db.one("SELECT * FROM users WHERE email = $1;", [req.body.email])
     .then(function(result) {
       if (bcrypt.compareSync(req.body.password, result.password_digest)) {
         req.user = result;

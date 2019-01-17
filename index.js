@@ -3,6 +3,7 @@ const port = 3000;
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const jwt = require("jsonwebtoken");
 
 const app = express();
 require("dotenv").config();
@@ -18,14 +19,11 @@ app.get('/', (req, res) => {
   res.send('Jobs, Jobs, Jobs');
 })
 
-const usersController = require('./controllers/usersController');
+const usersController = require('./controllers/usersControllers');
 app.use('/user', usersController);
 
-const jobsController = require('./controllers/jobsController');
+const jobsController = require('./controllers/jobsControllers');
 app.use('/job', jobsController);
-
-const authController = require("./controllers/authController");
-app.use("/auth/", authController);
 
 app.listen(port, () => {
   console.log('listening on localhost:' + port);
