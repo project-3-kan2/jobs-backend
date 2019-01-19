@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-  res.render('Jobs, Jobs, Jobs');
+  res.send('Jobs, Jobs, Jobs');
 })
 
 const usersController = require('./controllers/usersControllers');
