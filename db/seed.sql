@@ -26,14 +26,8 @@ CREATE TABLE saved_job
   FOREIGN KEY (user_id) REFERENCES users ON DELETE CASCADE
 );
 
-INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('aisha','aisha','alm','a@a.com', '0550123456' );
-INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('nada','nada','ash','n@n.com', '0550654321' );
-INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('nawaf','nawaf', 'alh', 'n2@n.com', '0550123123' );
-INSERT INTO users (username, firstname, lastname, email, phone) VALUES ('khaled','khaled', 'tah', 'k@k.com', '0550321321' );
-
-
-INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
-INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('ce','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',2 );
-INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('cs' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',3);
-INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('ec','qwertyy','qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy',4);
-INSERT INTO saved_job (title, description, job_url, job_location, company_logo ,company_name ,user_id) VALUES ('it' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy' ,'qwertyy', 1);
+INSERT INTO users (username, firstname, lastname, email, phone) VALUES 
+('aisha','aisha','alm','a@a.com', '0550123456' ), 
+('nada','nada','asghar','n@n.com', '0550654321' ),
+('nawaf','nawaf', 'alh', 'n2@n.com', '0550123123' ),
+('khaled','khaled', 'taha', 'k@k.com', '0550321321' );
