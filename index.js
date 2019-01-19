@@ -3,8 +3,10 @@ const PORT = process.env.PORT || 3000;
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const cors = require('cors')
 
 const app = express();
+app.use(cors())
 
 app.use(logger('dev'));
 
@@ -23,6 +25,6 @@ app.use('/user', usersController);
 const jobsController = require('./controllers/jobsControllers');
 app.use('/job', jobsController);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log('listening on localhost:' + port);
 });

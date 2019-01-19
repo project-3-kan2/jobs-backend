@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
@@ -16,7 +17,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "11.2.0" 
+    "node": "11.2.0"
   },
   "repository": {
     "type": "git",
