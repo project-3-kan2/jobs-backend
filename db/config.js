@@ -6,9 +6,9 @@ const config = {
   host: 'localhost',
   port: 5432,
   database: 'jobs',
-  user: 'nadaabdulkarem' // your username here!!
+  user: 'khalid' // your username here!!
 }
 
-const connection = pgInstance(config);
+const connection = pgInstance(process.env.DATABASE_URL || config);
 
 module.exports = connection;
