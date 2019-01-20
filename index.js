@@ -1,10 +1,12 @@
 const express = require('express');
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const cors = require('cors')
 
 const app = express();
+app.use(cors())
 
 app.use(logger('dev'));
 
@@ -14,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-  res.send('Jobs, Jobs, Jobs');
+  res.send('Jobs, jobs, Jobs');
 })
 
 const usersController = require('./controllers/usersControllers');
@@ -23,6 +25,6 @@ app.use('/user', usersController);
 const jobsController = require('./controllers/jobsControllers');
 app.use('/job', jobsController);
 
-app.listen(port, () => {
-  console.log('listening on localhost:' + port);
+app.listen(PORT, () => {
+  console.log('listening on localhost:' + PORT);
 });
